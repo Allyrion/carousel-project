@@ -1,0 +1,39 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Work Sans', sans-serif;
+}
+
+#carouselTwo {
+    display: grid;
+    justify-content: center;
+}
+
+.carouselTwo-container {
+    display: flex;
+    overflow: hidden;
+    width: 744px;
+    justify-self: center;
+    justify-items: flex-start;
+}
+
+#carouselTwo-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 744px;
+    justify-self: center;
+    padding: 10px;
+}
+
+.carouselTwo-slides img {
+    width: 300px;
+    object-fit: cover;
+    padding: 10px;
+
+}
+
+.hideSlide {
+    display: none;
+}
+
