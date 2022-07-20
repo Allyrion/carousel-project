@@ -22,27 +22,37 @@ nextButton.addEventListener("click", ()=> {
 
         
         for (let i = 0; i < 2; i++) {
+
             slides[slidesHidden].classList.add("hideSlide");
             slides[slidesHidden].classList.remove("animate__slideInRight");
+            slides[slidesHidden+1].classList.add("hideSlide");
+            slides[slidesHidden+1].classList.remove("hideSlide");
             slidesHidden += 1;
+
         }
 
         slides[slidesHidden].classList.add("animate__animated", "animate__slideInRight");
         slides[slidesHidden+1].classList.add("animate__animated", "animate__slideInRight");
-        //slides[slidesHidden+2].classList.add("animate__animated", "animate__slideInRight");
+        slides[slidesHidden+2].classList.add("animate__animated", "animate__slideInRight");
 
     }
 
 });
 
 prevButton.addEventListener("click", ()=> {
-    if (slidesHidden > 1) {
+    if (slidesHidden >= 0) {
         for (let i = 0; i < 2; i++) {
+            
             slides[slidesHidden].classList.add("animate__slideInLeft");
-            slides[slidesHidden-1].classList.remove("animate__slideInLeft");
+            if (slides[slidesHidden-1] !== undefined){
+                slides[slidesHidden-1].classList.remove("animate__slideInLeft");
+            }
+            
             slides[slidesHidden].classList.remove("hideSlide");
             
-            slidesHidden -= 1;
+            if (slidesHidden !== 0) {
+                slidesHidden -= 1;
+            }
         }
 
 
