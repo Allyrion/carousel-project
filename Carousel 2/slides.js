@@ -19,26 +19,31 @@ const getWidth = () => {
 nextButton.addEventListener("click", ()=> {
     console.log("success");
     if (slidesHidden < 5) {
+
+        
         for (let i = 0; i < 2; i++) {
-            slides[slidesHidden].classList.add = `hideSlide`;
+            slides[slidesHidden].classList.add("hideSlide");
+            slides[slidesHidden].classList.remove("animate__slideInRight");
             slidesHidden += 1;
         }
-        slides[slidesHidden].className += " animate__animated animate__slideInRight";
-        slides[slidesHidden+1].className += " animate__animated animate__slideInRight";
 
+        slides[slidesHidden].classList.add("animate__animated", "animate__slideInRight");
+        slides[slidesHidden+1].classList.add("animate__animated", "animate__slideInRight");
+        //slides[slidesHidden+2].classList.add("animate__animated", "animate__slideInRight");
 
     }
 
 });
 
 prevButton.addEventListener("click", ()=> {
-    if (slidesHidden > 0) {
+    if (slidesHidden > 1) {
         for (let i = 0; i < 2; i++) {
-            slides[slidesHidden].style.display = "none";
-            slidesHidden += 1;
+            slides[slidesHidden].classList.add("animate__slideInLeft");
+            slides[slidesHidden-1].classList.remove("animate__slideInLeft");
+            slides[slidesHidden].classList.remove("hideSlide");
+            
+            slidesHidden -= 1;
         }
-        slides[slidesHidden].className += " animate__animated animate__slideInRight";
-        slides[slidesHidden+1].className += " animate__animated animate__slideInRight";
 
 
     }
