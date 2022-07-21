@@ -42,3 +42,8 @@ a {
     color:blue;
 }
 
+#button-container {
+    display: grid;
+    justify-content: center;
+}
+

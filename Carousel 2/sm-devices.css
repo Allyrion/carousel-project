@@ -1,0 +1,17 @@
+@media (max-width: 575.98px) {
+
+    #carouselTwo {
+        justify-content: start;
+        overflow: hidden;
+    }
+
+    #carouselTwo-buttons{
+        width: auto;
+        justify-self: auto;
+    }
+
+    #button-container{
+        justify-content: stretch;
+    }
+
+}
