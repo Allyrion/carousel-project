@@ -81,7 +81,7 @@ nextButton.addEventListener("click", ()=> {
                     slides[2].classList.remove("hideSlide");
                     slides[3].classList.remove("hideSlide")
                     slides[4].classList.remove("hideSlide")
-                }, 1);
+                }, 10);
 
                 slidePos += 1;
 
@@ -95,7 +95,7 @@ nextButton.addEventListener("click", ()=> {
                     slides[4].classList.remove("hideSlide");
                     slides[5].classList.remove("hideSlide");
                     slides[6].classList.remove("hideSlide");
-                }, 1);
+                }, 10);
 
                 slidePos += 1;
 
@@ -107,7 +107,7 @@ nextButton.addEventListener("click", ()=> {
                 const displaySlides = setTimeout(() => {
                     slides[6].classList.remove("hideSlide");
                     slides[7].classList.remove("hideSlide");
-                }, 1);
+                }, 10);
 
                 slidePos += 1;
             }
@@ -163,7 +163,7 @@ prevButton.addEventListener("click", ()=> {
                     slides[0].classList.remove("hideSlide");
                     slides[1].classList.remove("hideSlide")
                     slides[2].classList.remove("hideSlide")
-                }, 1);
+                }, 10);
 
                 slidePos -= 1;
 
@@ -177,7 +177,7 @@ prevButton.addEventListener("click", ()=> {
                     slides[2].classList.remove("hideSlide");
                     slides[3].classList.remove("hideSlide")
                     slides[4].classList.remove("hideSlide")
-                }, 1);
+                }, 10);
 
                 slidePos -= 1;
 
@@ -191,7 +191,7 @@ prevButton.addEventListener("click", ()=> {
                     slides[4].classList.remove("hideSlide");
                     slides[5].classList.remove("hideSlide");
                     slides[6].classList.remove("hideSlide");
-                }, 1);
+                }, 10);
 
                 slidePos -= 1;
             }
