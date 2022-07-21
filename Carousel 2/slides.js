@@ -20,7 +20,16 @@ nextButton.addEventListener("click", ()=> {
     console.log("success");
     if (slidesHidden < 5) {
 
-        
+        for (let i = 0; i < slides.length; i++) {
+            if (slides[i].classList.contains("animate__slideInRight") == true) {
+            slides[i].classList.remove("animate__slideInRight");
+            }
+            if (slides[i].classList.contains("animate__slideInLeft") == true) {
+                slides[i].classList.remove("animate__slideInLeft");
+            }
+
+        }
+
         for (let i = 0; i < 2; i++) {
 
             slides[slidesHidden].classList.add("hideSlide");

@@ -1,0 +1,38 @@
+#carouselOne {
+    display: grid;
+    justify-content: center;
+}
+
+.film-buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.image-grid {
+    display: flex;
+    overflow: hidden;
+    margin-left: 20%;
+    align-items: baseline;
+}
+
+.image-grid img{
+    height: 600px;
+    align-self: center;
+    padding: 30px;
+
+}
+
+#filmTwoImg {
+    height: 500px;
+}
+
+/* .image-grid:nth-child(1) > img {
+    justify-self: center;
+    overflow: hidden;
+    margin: 10px;
+    height: 600px;
+}
+
+.image-grid:nth-child(2) > img {
+
+} */
