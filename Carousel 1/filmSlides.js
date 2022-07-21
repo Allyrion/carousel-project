@@ -8,6 +8,12 @@ const film2_img = document.querySelector("#filmTwoImg");
 const lines = document.querySelectorAll(".line")
 
 
+//Media Queries
+const iPadQuery = window.matchMedia('(min-width: 768px)')
+
+
+
+
 
 const filmTwoFocus = () => {
     imageGrid.style.marginLeft = "-110%";
