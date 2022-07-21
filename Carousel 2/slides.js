@@ -9,7 +9,7 @@ const slides = document.getElementsByClassName("carouselTwo-slides");
 let viewportWidth;
 
 //slider count
-let slidesHidden = 0;
+let slidePos = 1;
 
 const getWidth = () => {
     viewportWidth = window.innerWidth;
@@ -17,8 +17,7 @@ const getWidth = () => {
 
 
 nextButton.addEventListener("click", ()=> {
-    console.log("success");
-    if (slidesHidden < 5) {
+    /* if (slidesHidden < 5) {
 
         for (let i = 0; i < slides.length; i++) {
             if (slides[i].classList.contains("animate__slideInRight") == true) {
@@ -56,14 +55,69 @@ nextButton.addEventListener("click", ()=> {
             if (slides[slidesHidden+2] !== undefined) {
                 slides[slidesHidden+2].classList.remove("hideSlide");
             }
-        }, 1);
+        }, 1); } */
 
-    }
+        if (slidePos < 4) {
+
+            // Cleans up animation
+            for (let i = 0; i < slides.length; i++) {
+                if (slides[i].classList.contains("animate__slideInRight") == true) {
+                slides[i].classList.remove("animate__slideInRight");
+                }
+                if (slides[i].classList.contains("animate__slideInLeft") == true) {
+                    slides[i].classList.remove("animate__slideInLeft");
+                }
+                slides[i].classList.add("hideSlide");
+            }
+
+            
+            // Adds animation to appropriate slides and displays them at slight delay
+            if (slidePos == 1) {
+                slides[2].classList.add("animate__slideInRight");
+                slides[3].classList.add("animate__slideInRight");
+                slides[4].classList.add("animate__slideInRight");
+
+                const displaySlides = setTimeout(() => {
+                    slides[2].classList.remove("hideSlide");
+                    slides[3].classList.remove("hideSlide")
+                    slides[4].classList.remove("hideSlide")
+                }, 1);
+
+                slidePos += 1;
+
+
+            } else if (slidePos == 2) {
+                slides[4].classList.add("animate__slideInRight");
+                slides[5].classList.add("animate__slideInRight");
+                slides[6].classList.add("animate__slideInRight");
+
+                const displaySlides = setTimeout(() => {
+                    slides[4].classList.remove("hideSlide");
+                    slides[5].classList.remove("hideSlide");
+                    slides[6].classList.remove("hideSlide");
+                }, 1);
+
+                slidePos += 1;
+
+
+            } else if (slidePos == 3) {
+                slides[6].classList.add("animate__slideInRight");
+                slides[7].classList.add("animate__slideInRight");
+
+                const displaySlides = setTimeout(() => {
+                    slides[6].classList.remove("hideSlide");
+                    slides[7].classList.remove("hideSlide");
+                }, 1);
+
+                slidePos += 1;
+            }
+
+        }
 
 });
 
 prevButton.addEventListener("click", ()=> {
-    if (slidesHidden >= 0) {
+    /* if (slidesHidden >= 0) {
         for (let i = 0; i < 2; i++) {
             
             slides[slidesHidden].classList.add("animate__slideInLeft");
@@ -76,14 +130,73 @@ prevButton.addEventListener("click", ()=> {
             /* const resetDisplayPrev = setTimeout(() => {
                 slides[slidesHidden].classList.add("animate__slideInLeft");
                 slides[slidesHidden].classList.remove("hideSlide");
-            }, 1); */
+            }, 1); 
             
             if (slidesHidden !== 0) {
                 slidesHidden -= 1;
             }
 
         }
+     } */
+
+        if (slidePos > 1) {
+
+            // Cleans up animation
+            for (let i = 0; i < slides.length; i++) {
+                if (slides[i].classList.contains("animate__slideInRight") == true) {
+                slides[i].classList.remove("animate__slideInRight");
+                }
+                if (slides[i].classList.contains("animate__slideInLeft") == true) {
+                    slides[i].classList.remove("animate__slideInLeft");
+                }
+                slides[i].classList.add("hideSlide");
+            }
+
+            
+            // Adds animation to appropriate slides and displays them at slight delay
+            if (slidePos == 2) {
+                slides[0].classList.add("animate__slideInRight");
+                slides[1].classList.add("animate__slideInRight");
+                slides[2].classList.add("animate__slideInRight");
+
+                const displaySlides = setTimeout(() => {
+                    slides[0].classList.remove("hideSlide");
+                    slides[1].classList.remove("hideSlide")
+                    slides[2].classList.remove("hideSlide")
+                }, 1);
+
+                slidePos -= 1;
 
 
-    }
+            } else if (slidePos == 3) {
+                slides[2].classList.add("animate__slideInRight");
+                slides[3].classList.add("animate__slideInRight");
+                slides[4].classList.add("animate__slideInRight");
+
+                const displaySlides = setTimeout(() => {
+                    slides[2].classList.remove("hideSlide");
+                    slides[3].classList.remove("hideSlide")
+                    slides[4].classList.remove("hideSlide")
+                }, 1);
+
+                slidePos -= 1;
+
+
+            } else if (slidePos == 4) {
+                slides[4].classList.add("animate__slideInRight");
+                slides[5].classList.add("animate__slideInRight");
+                slides[6].classList.add("animate__slideInRight");
+
+                const displaySlides = setTimeout(() => {
+                    slides[4].classList.remove("hideSlide");
+                    slides[5].classList.remove("hideSlide");
+                    slides[6].classList.remove("hideSlide");
+                }, 1);
+
+                slidePos -= 1;
+            }
+
+        }
+
+
 });
