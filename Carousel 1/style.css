@@ -11,14 +11,16 @@
 .image-grid {
     display: flex;
     overflow: hidden;
-    margin-left: 20%;
+    padding-left: 55%;
     align-items: baseline;
+    justify-content: center;
 }
 
 .image-grid img{
     height: 600px;
     align-self: center;
     padding: 30px;
+    object-fit: cover;
 
 }
 
@@ -40,3 +42,8 @@
   .active, .line:hover {
     background-color: #717171;
   }
+
+  a {
+    cursor:pointer;
+    color:blue;
+}

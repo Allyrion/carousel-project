@@ -1,0 +1,44 @@
+@media (max-width: 575.98px) {
+
+    #filmOneImage {
+        height: 600px;
+        width: 160px;
+    }
+
+    #filmTwoImage {
+        height: 500px;
+        width: 160px;
+    }
+
+    .image-grid img {
+        width: 160px;
+    }
+
+    .image-grid {
+        padding-left: 55%;
+    }
+
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+
+    #filmOneImage {
+        height: 600px;
+        width: 500px;
+    }
+
+    #filmOneImage {
+        height: 500px;
+        width: 500px;
+    }
+
+    .image-grid img {
+        width: 500px;
+    }
+
+    .image-grid {
+        
+        padding-left: 70%;
+    }
+
+}

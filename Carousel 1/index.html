@@ -7,12 +7,18 @@
     <title>Carousel 1</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="filmSlides.js" type="module"></script>
+    <link rel="stylesheet" href="sm-devices.css">
+
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </head>
-<body>
+
+<body data-role="page" id="page_one">
     <div id="carouselOne">
         <div class="film-buttons">
-            <a class="film1-link" href="#slide-1">Film One</a>
-            <a class="film2-link" href="#slide-2">Film Two</a>
+            <a class="film1-link">Film One</a>
+            <a class="film2-link">Film Two</a>
         </div>
 
         <div class="image-grid">
@@ -28,6 +34,6 @@
         </div>
     </div>
 
-    
+    <script defer src="filmSlides.js" type="module"></script>
 </body>
 </html>

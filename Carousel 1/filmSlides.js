@@ -10,7 +10,7 @@ const lines = document.querySelectorAll(".line")
 
 
 const filmTwoFocus = () => {
-    imageGrid.style.marginLeft = "-45%";
+    imageGrid.style.marginLeft = "-110%";
     film1_img.style.height = "500px";
     film2_img.style.height = "600px";
     lines[1].classList.add("active")
@@ -18,7 +18,8 @@ const filmTwoFocus = () => {
 }
 
 const filmOneFocus = () => {
-    imageGrid.style.marginLeft = "20%";
+    imageGrid.style.paddingLeft = "55%";
+    imageGrid.style.marginLeft = null;
     film1_img.style.height = "600px";
     film2_img.style.height = "500px";
     lines[0].classList.add("active")
@@ -48,4 +49,16 @@ filmOneLinks[2].addEventListener("click", ()=> {
 
 filmTwoLinks[2].addEventListener("click", ()=> {
     filmTwoFocus();
+});
+
+
+
+
+$(document).on("pagecreate","#page_one",function(){
+    $(".image-grid").on("swipeleft",function(){
+        filmTwoFocus();
+    });
+    $(".image-grid").on("swiperight",function(){
+        filmOneFocus();
+    });
 });
