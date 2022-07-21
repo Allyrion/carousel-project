@@ -1,14 +1,5 @@
 @media (max-width: 575.98px) {
 
-    #filmOneImage {
-        height: 600px;
-        width: 160px;
-    }
-
-    #filmTwoImage {
-        height: 500px;
-        width: 160px;
-    }
 
     .image-grid img {
         width: 160px;
