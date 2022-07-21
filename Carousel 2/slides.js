@@ -28,43 +28,56 @@ handleTabletChange(mediaQuery)
 let marginLeft = 0;
 let speed;
 let maxMargin;
+let carouselNext;
+let carouselPrev;
+let intervalTimeout;
 
 //Settings for desktop
 if (mobileScreen == false){
     speed = 50;
     maxMargin = 1800;
+    intervalTimeout = 350;
 } else if (mobileScreen == true) {
-    speed = 25;
-    maxMargin = 2100;
+    speed = 60;
+    maxMargin = 2000;
+    intervalTimeout = 150;
 }
 
 //Next Function
 const nextMovement = () => {
-    if (marginLeft < maxMargin) {
-        const carouselNext = setInterval(()=>{
-            anchor.style.marginLeft = `-${marginLeft+speed}px`;
-            marginLeft = marginLeft + speed;
-            console.log(marginLeft);
-        }, 25)
+    
+    if (!carouselNext){
+        if (marginLeft < maxMargin) {
+            carouselNext = setInterval(()=>{
+                anchor.style.marginLeft = `-${marginLeft+speed}px`;
+                marginLeft = marginLeft + speed;
+                console.log(marginLeft);
+            }, 25)
 
-        const stopNext = setTimeout(() => {
-            clearInterval(carouselNext);
-        }, 350)
+            const stopNext = setTimeout(() => {
+                clearInterval(carouselNext);
+                carouselNext = undefined;
+            }, intervalTimeout)
+        }
     }
 }
 
 //Previous Function
 const prevMovement = () => {
     if (marginLeft > 0) {
-        const carouselNext = setInterval(()=>{
-            anchor.style.marginLeft = `-${marginLeft-speed}px`;
-            marginLeft = marginLeft - speed;
-            console.log(marginLeft);
-        }, 25)
 
-        const stopNext = setTimeout(() => {
-            clearInterval(carouselNext);
-        }, 350)
+        if (!carouselPrev){
+            carouselPrev = setInterval(()=>{
+                anchor.style.marginLeft = `-${marginLeft-speed}px`;
+                marginLeft = marginLeft - speed;
+                console.log(marginLeft);
+            }, 25)
+
+            const stopNext = setTimeout(() => {
+                clearInterval(carouselPrev);
+                carouselPrev = undefined;
+            }, intervalTimeout)
+        }
     }
 }
 
@@ -87,9 +100,14 @@ prevButton.addEventListener("click", ()=> {
 
 $(document).on("pagecreate","#page_one",function(){
     $("#carouselTwo").on("swipeleft",function(){
-        nextMovement();
+
+        if (!carouselNext){
+            nextMovement();
+        }
     });
     $("#carouselTwo").on("swiperight",function(){
-        prevMovement();
+        if (!carouselPrev){
+            prevMovement();
+        }
     });
 });
