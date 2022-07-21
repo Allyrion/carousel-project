@@ -155,9 +155,9 @@ prevButton.addEventListener("click", ()=> {
             
             // Adds animation to appropriate slides and displays them at slight delay
             if (slidePos == 2) {
-                slides[0].classList.add("animate__slideInRight");
-                slides[1].classList.add("animate__slideInRight");
-                slides[2].classList.add("animate__slideInRight");
+                slides[0].classList.add("animate__slideInLeft");
+                slides[1].classList.add("animate__slideInLeft");
+                slides[2].classList.add("animate__slideInLeft");
 
                 const displaySlides = setTimeout(() => {
                     slides[0].classList.remove("hideSlide");
@@ -169,9 +169,9 @@ prevButton.addEventListener("click", ()=> {
 
 
             } else if (slidePos == 3) {
-                slides[2].classList.add("animate__slideInRight");
-                slides[3].classList.add("animate__slideInRight");
-                slides[4].classList.add("animate__slideInRight");
+                slides[2].classList.add("animate__slideInLeft");
+                slides[3].classList.add("animate__slideInLeft");
+                slides[4].classList.add("animate__slideInLeft");
 
                 const displaySlides = setTimeout(() => {
                     slides[2].classList.remove("hideSlide");
@@ -183,9 +183,9 @@ prevButton.addEventListener("click", ()=> {
 
 
             } else if (slidePos == 4) {
-                slides[4].classList.add("animate__slideInRight");
-                slides[5].classList.add("animate__slideInRight");
-                slides[6].classList.add("animate__slideInRight");
+                slides[4].classList.add("animate__slideInLeft");
+                slides[5].classList.add("animate__slideInLeft");
+                slides[6].classList.add("animate__slideInLeft");
 
                 const displaySlides = setTimeout(() => {
                     slides[4].classList.remove("hideSlide");
